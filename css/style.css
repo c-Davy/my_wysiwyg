@@ -1,0 +1,287 @@
+/* reset */
+* {
+    font-family: 'Roboto', sans-serif;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+button, iframe, select {
+    outline: none;
+    border: none;
+}
+
+/* Layout blocks */
+.container-fluid {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #e6e6e6;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #225a9d;
+    width: 100%;
+    padding: .7rem;
+}
+
+.header-title {
+    margin: 0 0 0 2rem;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.help_popup {
+    position: absolute;
+    display: none;
+    background-color: blue;
+}
+
+.fa-poo {
+    position: fixed;
+    display: flex;
+    right: 0;
+    bottom: 1rem;
+    color: #666;
+    margin: .1rem 2rem 0 0;
+    cursor: pointer;
+}
+
+.fa-poo:hover + .squick-squick {
+    display: flex;
+}
+
+.squick-squick {
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    max-width: 15rem;
+    right: 1rem;
+    bottom: 3rem;
+    padding: 1rem;
+    font-size: 14px;
+    line-height: 150%;
+    color: #666;
+    background-color: rgba(240, 240, 240, .7);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+    border-radius: 6px;
+    transition: .4s;
+}
+
+.squick-li {
+    margin: 5px 0 0;
+}
+
+.squick-li i {
+    margin: 0 .5rem 0 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    background-color: #eee;
+    padding: 1rem 0 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+}
+
+/* Frames */
+.wysiwyg {
+    margin: 1.2rem auto;
+}
+
+.wysiwyg-frame {
+    width: 45vw;
+    min-width: 40rem;
+    max-width: 100%;
+    height: 70rem;
+    padding: 5rem;
+    margin: auto;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    outline: none;
+    font-weight: normal;
+}
+
+.wysiwyg-frame--hidden {
+    display: none;
+}
+
+/* Buttons */
+.wysiwyg-button {
+    width: 3.6rem;
+    padding: 1em;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: capitalize;
+    color: #111; /* #C0FFEE; */
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.wysiwyg-button:hover {
+    background-color: #e1e1e1;
+}
+
+.wysiwyg-button:active {
+    background-color: #d1d1d1;
+}
+
+.wysiwyg-button--save {
+    color: #796c91;
+    margin: 0 1rem 0 0;
+}
+
+.wysiwyg-button--save::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1.8rem;
+    background-color: #bbb;
+    margin: -.4rem 0 0 1.8rem;
+}
+
+.wysiwyg-button--switch {
+    margin: 0 1rem 0 0;
+}
+
+.wysiwyg-button--switch::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1.8rem;
+    background-color: #bbb;
+    margin: -.4rem 0 0 1.8rem;
+}
+
+.wysiwyg-button--justify {
+    margin: 0 1rem 0 0;
+}
+
+.wysiwyg-button--justify::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1.8rem;
+    background-color: #bbb;
+    margin: -.4rem 0 0 1.8rem;
+}
+
+.wysiwyg-button--left {
+    margin: 0 0 0 1rem;
+}
+
+.wysiwyg-button--left::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1.8rem;
+    background-color: #bbb;
+    margin: -.4rem 0 0 -1.9rem;
+}
+
+.wysiwyg-button--center {
+}
+
+.wysiwyg-button--right {
+}
+
+.toolbar-palette {
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: absolute;
+    padding: 1rem;
+    margin: 3.1rem 0 0 4.6rem;
+    width: 9rem;
+    background-color: #f5f5f5;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+}
+
+.toolbar-color {
+    margin: .3rem;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    /*box-shadow: 0 0 5px rgba(0, 0, 0, .3);*/
+}
+
+.toolbar-color-red {
+    background-color: red;
+}
+.toolbar-color-orange {
+    background-color: orange;
+}
+.toolbar-color-yellow {
+    background-color: yellow;
+}
+.toolbar-color-green {
+    background-color: green;
+}
+.toolbar-color-blue {
+    background-color: blue;
+}
+.toolbar-color-purple {
+    background-color: purple;
+}
+.toolbar-color-pink {
+    background-color: pink;
+}
+
+.toolbar-size {
+    display: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: absolute;
+    padding: .5rem;
+    margin: 3.1rem 0 0 -19.5rem;
+    background-color: #f5f5f5;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+}
+
+.toolbar-size-value {
+    padding: .5rem 1rem;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.toolbar-size-value:hover {
+    background-color: #eee;
+}
+
+.toolbar-select {
+}
+
+.wysiwyg-button--thinner {
+}
+
+.wysiwyg-button--thicker {
+}
+
+.wysiwyg-button--link {
+}
+
+.wysiwyg-button--bold {
+}
+
+.wysiwyg-button--italic {
+}
+
+.wysiwyg-button--strike {
+}
